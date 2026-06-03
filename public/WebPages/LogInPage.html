@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Atlas of Ancient Civilizations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-group nav-group-left">
+            <a href="AboutFAQ.html">About</a>
+        </div>
+        <div class="nav-group nav-group-center">
+            <a href="Map.html">
+                <img src="images/logo.png" alt="Atlas logo" height="20vh" class="navbar-logo">
+            </a>
+        </div>
+        <div class="nav-group nav-group-right">
+            <a href="Settings.html">Settings</a>
+            <a href="LogInPage.html">Log-In</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="ad">
+            <div class="panel-callout">
+                <p class="eyebrow">Welcome Back</p>
+                <h3>Pick up your exploration where you left off.</h3>
+                <p>Sign in to jump directly into the interactive atlas and saved preferences.</p>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2>Sign In</h2>
+            <form id="loginForm">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit">Sign In</button>
+
+                <p>Don't have an account? <a href="RegisterPage.html">Create one here.</a></p>
+            </form>
+        </div>
+        <div class="ad">
+            <div class="panel-callout">
+                <p class="eyebrow">Project Focus</p>
+                <h3>History told through geography.</h3>
+                <p>Explore ancient empires with lightweight narratives backed by a MySQL content store.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 | Atlas of Ancient Civilizations
+    </footer>
+
+    <script src="javaScript/ui.js"></script>
+    <script src="javaScript/login_register.js"></script>
+    <script src="javaScript/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "historicalmap",
+  "version": "1.0.0",
+  "description": "Interactive full-stack history explorer for ancient civilizations.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "test": "echo \"No automated tests configured yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincivv/HistoricalMap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincivv/HistoricalMap/issues"
+  },
+  "homepage": "https://github.com/vincivv/HistoricalMap#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.14.1"
+  }
+}

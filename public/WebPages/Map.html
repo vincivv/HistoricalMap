@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas of Ancient Civilizations</title>
+    <meta name="description" content="Explore interactive historical map overlays and short narratives for major ancient empires.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="site-nav">
+        <div class="nav-group nav-group-left">
+            <div class="search-shell">
+                <input type="text" placeholder="Search an empire or region" class="search-bar" aria-label="Search map locations">
+                <ul id="search-suggestions" class="suggestions"></ul>
+            </div>
+            <a href="AboutFAQ.html">About</a>
+        </div>
+        <div class="nav-group nav-group-center">
+            <a href="Map.html">
+                <img src="images/logo.png" alt="Atlas logo" height="20vh" class="navbar-logo">
+            </a>
+        </div>
+        <div class="nav-group nav-group-right">
+            <a href="Settings.html">Settings</a>
+            <a href="LogInPage.html" id="loginBtn">Log-In</a>
+            <a href="LogInPage.html" id="logoutBtn" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+
+    <div class="map-layout">
+        <button id="intro-toggle" class="map-floating-button map-floating-button-left" type="button">
+            How It Works
+        </button>
+
+        <section id="map-hero" class="map-hero map-card is-hidden">
+            <button id="intro-close" class="panel-close-button" type="button" aria-label="Close introduction panel">
+                x
+            </button>
+            <p class="eyebrow">Interactive History Explorer</p>
+            <h1>Compare ancient empires on a single living map.</h1>
+            <p class="hero-copy">Click a highlighted territory to open a short historical note, or use search to jump straight to a civilization.</p>
+        </section>
+
+        <button id="story-toggle" class="map-floating-button map-floating-button-right is-hidden" type="button">
+            Open Story
+        </button>
+
+        <aside id="story-panel" class="story-panel map-card is-hidden" aria-live="polite">
+            <button id="story-close" class="panel-close-button" type="button" aria-label="Close story panel">
+                x
+            </button>
+            <p class="eyebrow">Selected Region</p>
+            <h2 id="story-title">Start Exploring</h2>
+            <p id="story-meta" class="story-meta">Pick a highlighted empire or use the search bar.</p>
+            <div id="story-content" class="story-content">
+                Historical notes will appear here without blocking the map.
+            </div>
+        </aside>
+
+        <div id="map"></div>
+
+        <section class="timeline-shell map-card" aria-label="Historical timeline">
+            <div class="timeline-header">
+                <div>
+                    <p class="eyebrow">Timeline</p>
+                    <h3><span id="timeline-year">0</span> AD</h3>
+                </div>
+                <p id="timeline-summary" class="timeline-summary">Move through the first millennium in 100-year steps.</p>
+            </div>
+
+            <input
+                id="timeline-slider"
+                class="timeline-slider"
+                type="range"
+                min="0"
+                max="1000"
+                step="100"
+                value="0"
+                aria-label="Select timeline year"
+            >
+
+            <div class="timeline-ticks" aria-hidden="true">
+                <span>0</span>
+                <span>100</span>
+                <span>200</span>
+                <span>300</span>
+                <span>400</span>
+                <span>500</span>
+                <span>600</span>
+                <span>700</span>
+                <span>800</span>
+                <span>900</span>
+                <span>1000</span>
+            </div>
+
+            <div>
+                <p class="eyebrow">Visible Civilizations</p>
+                <div id="active-civilizations" class="civilization-chips"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 | Atlas of Ancient Civilizations
+    </footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="javaScript/ui.js"></script>
+    <script src="javaScript/login_register.js"></script>
+    <script src="javaScript/theme.js"></script>
+    <script src="javaScript/map.js"></script>
+</body>
+</html>

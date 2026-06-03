@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Atlas of Ancient Civilizations</title>
+    <meta name="description" content="Learn about the Atlas of Ancient Civilizations project and how the interactive history explorer works.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav class="site-nav">
+            <div class="nav-group nav-group-left">
+                <a href="AboutFAQ.html">About</a>
+            </div>
+            <div class="nav-group nav-group-center">
+                <a href="Map.html">
+                    <img src="images/logo.png" alt="Atlas logo" height="20vh" class="navbar-logo">
+                </a>
+            </div>
+            <div class="nav-group nav-group-right">
+                <a href="Settings.html">Settings</a>
+                <a href="LogInPage.html" id="loginBtn">Log-In</a>
+                <a href="LogInPage.html" id="logoutBtn" onclick="logout()">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="about">
+            <p class="eyebrow">Project Overview</p>
+            <h1>Atlas of Ancient Civilizations</h1>
+            <p>This project began as a university team build and has been upgraded into a cleaner interactive history explorer that combines historical map overlays with short contextual narratives.</p>
+            <p>The goal is simple: make large-scale history easier to browse visually. Visitors can compare major ancient powers, inspect geographic boundaries, and read concise notes without leaving the map.</p>
+            <p>For a portfolio audience, the project now highlights practical full-stack work: Express routing, MySQL-backed content, authentication, local persistence for preferences, and data-driven rendering with Leaflet.</p>
+        </div>
+        <div class="faq">
+            <h1>Frequently Asked Questions</h1>
+            <div class="faq-item">
+                <h3>What is this project about?</h3>
+                <p>It is an interactive map experience focused on ancient civilizations, designed to make history feel visual, approachable, and easier to compare across regions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What technologies power it?</h3>
+                <p>The application uses Node.js, Express, MySQL, vanilla JavaScript, and Leaflet for interactive geographic overlays.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What was improved after the original class submission?</h3>
+                <p>The codebase was cleaned up, repeated logic was refactored into reusable modules, UI copy was rewritten, and the app structure was made more maintainable for long-term showcase use.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Where can I learn more or request a walkthrough?</h3>
+                <p><a href="mailto:TeamCiv@History.edu">TeamCiv@History.edu</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2026 | Atlas of Ancient Civilizations
+    </footer>
+    <script src="javaScript/login_register.js"></script>
+    <script src="javaScript/theme.js"></script>
+</body>
+</html>

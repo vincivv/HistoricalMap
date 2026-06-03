@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings | Atlas of Ancient Civilizations</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Toggle Switch Styles */
+    .toggle-switch {
+      position: relative;
+      width: 9.5vh;
+      height: 4.25vh;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      inset: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 6vh;
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 3vh;
+      width: 3.25vh;
+      left: 0.5vh;
+      right: 0.5vh;
+      bottom: 0.25vh;
+      top: 0.25vh;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    .toggle-switch input:checked+.slider {
+      background-color: #333;
+    }
+
+    .toggle-switch input:checked+.slider::before {
+      transform: translateX(5.25vh);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .slider {
+        background-color: #666;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="site-nav">
+    <div class="nav-group nav-group-left">
+      <a href="AboutFAQ.html">About</a>
+    </div>
+    <div class="nav-group nav-group-center">
+      <a href="Map.html">
+        <img src="images/logo.png" alt="Atlas logo" height="20vh" class="navbar-logo">
+      </a>
+    </div>
+    <div class="nav-group nav-group-right">
+      <a href="Settings.html">Settings</a>
+      <a href="LogInPage.html" id="loginBtn">Log-In</a>
+      <a href="LogInPage.html" id="logoutBtn" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="ad">
+      <div class="panel-callout">
+        <p class="eyebrow">Preferences</p>
+        <h3>Choose how the atlas feels.</h3>
+        <p>Store your display preferences locally so the map opens the same way next time.</p>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <h2>Map Settings</h2>
+      <form onsubmit="saveSettings(event)">
+        <label for="theme">Dark Mode</label>
+        <div class="toggle-switch">
+          <input type="checkbox" id="theme" />
+          <label for="theme" class="slider"></label>
+        </div>
+
+        <label for="basemap-toggle-label">Satellite View</label>
+        <div class="toggle-switch">
+          <input type="checkbox" id="basemap-toggle" />
+          <label for="basemap-toggle" class="slider"></label>
+        </div>
+        <button type="submit">Save Settings</button>
+      </form>
+    </div>
+
+    <div class="ad">
+      <div class="panel-callout">
+        <p class="eyebrow">Tip</p>
+        <h3>Satellite mode is best for geographic context.</h3>
+        <p>Standard map mode is easier for comparing borders and labels at a glance.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 | Atlas of Ancient Civilizations
+  </footer>
+
+  <script src="javaScript/ui.js"></script>
+  <script src="javaScript/login_register.js"></script>
+  <script src="javaScript/theme.js"></script>
+  <script src="javaScript/settings.js"></script>
+</body>
+
+</html>
