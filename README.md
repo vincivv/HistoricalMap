@@ -1,14 +1,18 @@
 # Atlas of Ancient Civilizations
 
-An interactive full-stack history explorer that overlays ancient empires on a Leaflet map and serves historical notes from a MySQL database.
+An interactive full-stack history explorer that maps major ancient empires, overlays historical regions on a live Leaflet experience, and serves supporting story content from MySQL.
+
+## Live Demo
+
+[Open the deployed app](https://historicalmap-production-abc2.up.railway.app)
 
 ## Highlights
 
-- Interactive map overlays for major ancient empires
-- Search-driven map navigation
-- MySQL-backed historical story content
-- User registration and login with hashed passwords and JWT authentication
-- Persistent display preferences for theme and basemap mode
+- Explore major ancient civilizations on an interactive world map
+- Jump across regions with search-driven navigation
+- Read historical notes backed by a MySQL data store
+- Register and log in with hashed passwords and JWT authentication
+- Keep theme and map display preferences between sessions
 
 ## Tech Stack
 
@@ -19,68 +23,16 @@ An interactive full-stack history explorer that overlays ancient empires on a Le
 - Vanilla JavaScript
 - HTML/CSS
 
-## Local Setup
-
-1. Install dependencies:
-
-```bash
-npm install
-```
-
-2. Create a `.env` file in the project root:
-
-```env
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_mysql_password
-DB_DATABASE=armadillo_923022045
-JWT_SECRET=replace_with_a_long_random_secret
-```
-
-3. Import the base schema and seeded users:
-
-```bash
-mysql -u root -p < dump_file.sql
-```
-
-4. Create the `country_stories` table if it does not exist:
-
-```sql
-USE armadillo_923022045;
-
-CREATE TABLE country_stories (
-  country_name VARCHAR(255) NOT NULL,
-  year INT NOT NULL,
-  title VARCHAR(255) NOT NULL,
-  content TEXT NOT NULL,
-  PRIMARY KEY (country_name, year)
-);
-```
-
-5. Import the historical story content:
-
-```bash
-node public/InsertDataInDB/importHistory.js
-```
-
-6. Start the app:
-
-```bash
-npm start
-```
-
-7. Visit [http://localhost:8243](http://localhost:8243)
-
 ## Project Structure
 
-- `app.js`: Express server setup
-- `routes/`: API routes for authentication and historical content
+- `app.js`: Express server bootstrap and static asset serving
+- `routes/`: Authentication and historical content API routes
 - `db.js`: Shared MySQL connection pool
-- `public/WebPages/`: Static pages, styles, scripts, and GeoJSON assets
-- `public/InsertDataInDB/`: JSON seed data and import script for historical stories
+- `public/WebPages/`: Frontend pages, styles, scripts, images, and GeoJSON assets
+- `public/InsertDataInDB/`: Historical JSON seed data and import script
 
 ## Notes
 
-- The current API returns the latest historical entry for a selected region.
-- Theme and basemap preferences are stored in `localStorage`.
-- The repository was originally created for a course project and has since been cleaned up for portfolio presentation.
+- Theme and basemap preferences are stored in `localStorage`
+- Authentication currently uses username-based login and JWT session tokens
+- The project began as a course build and has been cleaned up into a portfolio-ready version
